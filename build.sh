@@ -1,6 +1,7 @@
 #!/bin/sh
 
-BUILDER=caddy-builder
+NAME=caddy
+BUILDER=${NAME}-builder
 
 docker pull caddy:2-builder-alpine
 
@@ -9,8 +10,9 @@ docker buildx inspect --bootstrap
 
 docker buildx build \
     --platform linux/amd64,linux/arm64 \
-    --output "type=image,push=true" \
-    --tag ripples/caddy \
+    --push \
+    --pull \
+    --tag ripples/$NAME \
     --builder $BUILDER .
 
 docker buildx stop $BUILDER

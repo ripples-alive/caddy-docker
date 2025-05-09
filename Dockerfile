@@ -1,7 +1,7 @@
 FROM caddy:2-builder-alpine AS builder
 
 RUN xcaddy build \
-    --with github.com/caddy-dns/dnspod \
+    --with github.com/caddy-dns/tencentcloud \
     --with github.com/caddyserver/replace-response \
     --with github.com/mholt/caddy-l4
 

@@ -13,7 +13,7 @@ docker buildx build \
     --platform linux/amd64,linux/arm64 \
     --push \
     --pull \
-    --tag ripples/${NAME}:v${VERSION} \
+    --tag ripples/${NAME}:${VERSION} \
     --build-arg VERSION=$VERSION \
     --builder $BUILDER .
 

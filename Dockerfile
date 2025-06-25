@@ -3,6 +3,7 @@ FROM caddy:2-builder-alpine AS builder
 ARG VERSION
 
 RUN xcaddy build v${VERSION} \
+    --with github.com/caddy-dns/cloudflare \
     --with github.com/caddy-dns/tencentcloud \
     --with github.com/caddyserver/replace-response \
     --with github.com/mholt/caddy-l4

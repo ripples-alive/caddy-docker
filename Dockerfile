@@ -1,6 +1,8 @@
 FROM caddy:2-builder-alpine AS builder
 
-RUN xcaddy build \
+ARG VERSION
+
+RUN xcaddy build v${VERSION} \
     --with github.com/caddy-dns/tencentcloud \
     --with github.com/caddyserver/replace-response \
     --with github.com/mholt/caddy-l4

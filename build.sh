@@ -2,6 +2,7 @@
 
 NAME=caddy
 BUILDER=${NAME}-builder
+VERSION=2.10.0
 
 docker pull caddy:2-builder-alpine
 
@@ -12,7 +13,8 @@ docker buildx build \
     --platform linux/amd64,linux/arm64 \
     --push \
     --pull \
-    --tag ripples/$NAME \
+    --tag ripples/${NAME}:v${VERSION} \
+    --build-arg VERSION=$VERSION \
     --builder $BUILDER .
 
 docker buildx stop $BUILDER

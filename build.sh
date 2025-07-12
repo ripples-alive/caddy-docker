@@ -14,6 +14,7 @@ docker buildx build \
     --push \
     --pull \
     --tag ripples/${NAME}:${VERSION} \
+    --tag ripples/${NAME}:latest \
     --build-arg VERSION=$VERSION \
     --builder $BUILDER .
 

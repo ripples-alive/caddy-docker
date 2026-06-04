@@ -2,7 +2,7 @@
 
 NAME=caddy
 BUILDER=${NAME}-builder
-VERSION=2.11.3
+VERSION=2.11.4
 
 docker pull caddy:2-builder-alpine
 

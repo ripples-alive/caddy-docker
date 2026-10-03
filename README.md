@@ -27,11 +27,17 @@ The image is based on the official `caddy:2-alpine` runtime image, adds `tzdata`
 - Tags matching `v*`: build the tag version and push it plus `latest`.
 - Manual dispatch: optionally override the Caddy version and whether to push.
 
-The pinned upstream version is stored in one workflow variable:
+The pinned upstream version is stored in `caddy-version.txt`:
 
-```yaml
-DEFAULT_CADDY_VERSION: "2.11.4"
+```text
+2.11.4
 ```
+
+The `Update Caddy stable release` workflow checks the upstream stable release
+every day, validates a candidate multi-architecture build, and opens an exact
+version PR for automatic merging when repository rules allow it. Automated
+version commits avoid workflow files so the built-in `GITHUB_TOKEN` can push
+them.
 
 ## Local legacy build
 

@@ -5,7 +5,7 @@ Custom Caddy image with commonly used plugins prebuilt for deployment.
 ## Image
 
 - Registry: `ghcr.io/ripples-alive/caddy`
-- Version tag: `ghcr.io/ripples-alive/caddy:2.11.4`
+- Version tag: `ghcr.io/ripples-alive/caddy:2.11.6`
 - Latest tag: `ghcr.io/ripples-alive/caddy:latest`
 - Platforms: `linux/amd64`, `linux/arm64`
 
@@ -30,7 +30,7 @@ The image is based on the official `caddy:2-alpine` runtime image, adds `tzdata`
 The pinned upstream version is stored in `caddy-version.txt`:
 
 ```text
-2.11.4
+2.11.6
 ```
 
 The `Update Caddy stable release` workflow checks the upstream stable release
